@@ -107,6 +107,29 @@ void Check_Map(Map *map, const int *height, const int *width)
     }
 }
 
+void printMap(const Map &m)
+{
+    cout << "map_number:" << endl;
+    for (int i = 0; i < MAP_HEIGHT; ++i)
+    {
+        for (int j = 0; j < MAP_WIDTH; ++j)
+        {
+            cout << m.map_number[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    cout << "\nmap_check:" << endl;
+    for (int i = 0; i < MAP_HEIGHT; ++i)
+    {
+        for (int j = 0; j < MAP_WIDTH; ++j)
+        {
+            cout << m.map_check[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
 int main()
 {
     Map map = {
@@ -117,6 +140,15 @@ int main()
          {4, 2, 1, 6, 5, 3},
          {6, 1, 5, 4, 4, 4}},
         {}};
+
+    int height = MAP_HEIGHT, width = MAP_WIDTH;
+
+    Filling_An_Map_Check(&map, &height, &width);
+    Check_Columns_Down(&map, &height, &width);
+    Check_Rows(&map, &height, &width);
+    Check_Map(&map, &height, &width);
+
+    printMap(map);
 
     return 0;
 }
