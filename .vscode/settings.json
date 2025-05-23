@@ -60,6 +60,9 @@
     "array": "cpp",
     "string_view": "cpp",
     "initializer_list": "cpp",
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "map": "cpp",
+    "iomanip": "cpp",
+    "ostream": "cpp"
   }
 }
